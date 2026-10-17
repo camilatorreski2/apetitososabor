@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Apetitoso Sabor</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,800;1,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ícone do WhatsApp (definido uma vez, usado em vários lugares) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-whatsapp" viewBox="0 0 32 32">
+      <path d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.55 4.18 1.6 6L4 28l7.17-1.88a12 12 0 0 0 4.87.99C22.68 27.1 28 21.7 28 15.03 28 8.4 22.68 3 16.04 3zm0 21.9c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-4.25 1.12 1.14-4.14-.2-.32a9.8 9.8 0 0 1-1.5-5.2c0-5.43 4.43-9.85 9.86-9.85 5.43 0 9.84 4.42 9.84 9.85 0 5.42-4.41 9.88-9.84 9.88zm5.4-7.4c-.3-.15-1.75-.87-2.02-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.48-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+    </symbol>
+  </svg>
+
+  <!-- ============ CABEÇALHO ============ -->
+  <header class="header">
+    <div class="wrap header__bar">
+      <a class="logo" href="#topo">Apetitoso <span>Sabor</span></a>
+
+      <nav class="nav">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#pedido">Contato</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="cart" id="cart" aria-label="Carrinho">🛒<b id="cart-count">0</b></button>
+        <a class="btn" href="#pedido">Fazer pedido</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ============ INÍCIO ============ -->
+    <section class="hero">
+      <!-- Brasas animadas -->
+      <span class="ember" style="left:12%; animation-delay:0s"></span>
+      <span class="ember" style="left:30%; animation-delay:2s"></span>
+      <span class="ember" style="left:52%; animation-delay:4s"></span>
+      <span class="ember" style="left:70%; animation-delay:1s"></span>
+      <span class="ember" style="left:88%; animation-delay:3s"></span>
+
+      <div class="wrap hero__grid">
+        <div>
+          <h1 class="fade-in" style="animation-delay:.1s">
+            Comida feita<br>com <em>fogo</em> e afeto
+          </h1>
+
+          <p class="fade-in" style="animation-delay:.35s">
+            Pratos preparados na hora, com ingredientes frescos e muito tempero.
+            Do peixe grelhado ao hambúrguer suculento, cada prato chega à mesa
+            como se fosse o primeiro do dia.
+          </p>
+
+          <div class="hero__actions fade-in" style="animation-delay:.55s">
+            <a class="btn" href="#cardapio">Ver cardápio</a>
+            <a class="btn btn--ghost btn--whatsapp" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+              <svg class="icon"><use href="#icon-whatsapp"/></svg>
+              <span>PEÇA JÁ O SEU</span>
+            </a>
+          </div>
+
+          <div class="seals fade-in" style="animation-delay:.75s">
+            <span>Ingredientes frescos</span>
+            <span>Entrega rápida</span>
+            <span>Cozinha higienizada</span>
+          </div>
+        </div>
+
+        <div class="stage fade-in" style="animation-delay:.3s">
+          <div class="plate"><i>🐟</i></div>
+          <div class="stage__tag">o prato<br>da casa</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARDÁPIO ============ -->
+    <section class="section" id="cardapio">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2>Os mais pedidos</h2>
+            <p>Escolha o filtro e adicione ao carrinho. Tudo sai quentinho da cozinha.</p>
+          </div>
+
+          <div class="tabs" id="tabs">
+            <button aria-pressed="true"  data-category="all">Todos</button>
+            <button aria-pressed="false" data-category="grelha">Grelhados</button>
+            <button aria-pressed="false" data-category="lanche">Lanches</button>
+            <button aria-pressed="false" data-category="doce">Sobremesas</button>
+          </div>
+        </div>
+
+        <!-- Os cards são criados pelo script.js -->
+        <div class="menu-grid" id="menu-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section about" id="sobre">
+      <div class="wrap about__grid">
+        <div>
+          <h2>Receita de casa, serviço de restaurante</h2>
+          <p>
+            O Apetitoso Sabor nasceu de uma cozinha pequena e de uma ideia simples:
+            comida boa não precisa de pressa. Selecionamos cada ingrediente,
+            temperamos com calma e servimos com capricho.
+          </p>
+
+          <div class="stats">
+            <div><strong data-count-to="40">0</strong><span>pratos no cardápio</span></div>
+            <div><strong data-count-to="12">0</strong><span>anos de cozinha</span></div>
+            <div><strong data-count-to="30">0</strong><span>min de entrega</span></div>
+          </div>
+        </div>
+
+        <div class="hours">
+          <h3>Horário de funcionamento</h3>
+          <ul>
+            <li><span>Segunda a quinta</span><b>11h às 22h</b></li>
+            <li><span>Sexta e sábado</span><b>11h às 00h</b></li>
+            <li><span>Domingo</span><b>11h às 18h</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHAMADA PARA PEDIDO ============ -->
+    <section class="section cta" id="pedido">
+      <div class="wrap">
+        <h2>Bateu a fome?<br><em>A gente leva até você.</em></h2>
+        <p>Chame no WhatsApp, escolha seu prato e receba em casa ou reserve sua mesa.</p>
+
+        <a class="whatsapp-big" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp">
+          <svg class="icon"><use href="#icon-whatsapp"/></svg>
+          <span>PEÇA JÁ O SEU</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="footer">
+    <div class="wrap footer__bar">
+      <span>© 2026 Apetitoso Sabor. Todos os direitos reservados.</span>
+      <a class="whatsapp-small" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg class="icon"><use href="#icon-whatsapp"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Aviso (toast) -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
